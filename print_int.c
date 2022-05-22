@@ -17,7 +17,7 @@ int print_int(va_list arguments, char *buf, unsigned int ibuf)
 	if (int_input < 0)
 	{
 		int_in = int_input * -1;
-		ibuf = handl_buffer(buf, '-', ibuf);
+		ibuf = handle_buffer(buf, '-', ibuf);
 		isneg = 1;
 	}
 	else
@@ -36,7 +36,7 @@ int print_int(va_list arguments, char *buf, unsigned int ibuf)
 
 	for (i = 0; div > 0; div /= 10, i++)
 	{
-		ibuf = handl_buffer(buf, ((int_in / div) % 10) + '0', ibuf);
+		ibuf = handle_buffer(buf, ((int_in / div) % 10) + '0', ibuf);
 	}
 	return (i + isneg);
 }
